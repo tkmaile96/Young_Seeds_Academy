@@ -9,6 +9,20 @@ const { Pool } = require('pg');
 // dotenv lets us read the .env file
 require('dotenv').config();
 
+function shouldUseSsl() {
+  const sslMode = (process.env.DB_SSLMODE || process.env.PGSSLMODE || '').toLowerCase();
+  if (sslMode === 'require' || sslMode === 'verify-ca' || sslMode === 'verify-full') return true;
+
+  const sslFlag = (process.env.DB_SSL || '').toLowerCase();
+  if (sslFlag === 'true' || sslFlag === '1' || sslFlag === 'yes') return true;
+
+  const host = (process.env.DB_HOST || '').toLowerCase();
+  // Managed Postgres (Neon/Render/etc) typically requires SSL.
+  if (host && host !== 'localhost' && host !== '127.0.0.1') return true;
+
+  return false;
+}
+
 // ----- WHAT IS A POOL? -----
 // A Pool is a collection of database connections kept ready.
 // Instead of opening and closing a connection for every query,
@@ -21,6 +35,9 @@ const pool = new Pool({
   database: process.env.DB_NAME,      // The name of your database (e.g. "tirelo_classes")
   user:     process.env.DB_USER,      // Your PostgreSQL username (usually "postgres")
   password: process.env.DB_PASSWORD,  // Your PostgreSQL password
+  ...(shouldUseSsl()
+    ? { ssl: { rejectUnauthorized: false } }
+    : {}),
 });
 
 // ----- TEST THE CONNECTION -----

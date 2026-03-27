@@ -51,6 +51,9 @@
 // Store registration data temporarily for NDA flow
 let pendingRegistrationData = null;
 
+// Production API base (Render)
+const API_BASE = 'https://young-seeds-academy.onrender.com';
+
 async function handleSubmit(e, formType) {
   e.preventDefault();
   const form = e.target;
@@ -61,11 +64,11 @@ async function handleSubmit(e, formType) {
   
   // Match formType to endpoint
   if (formType === 'registration' || formType === 'regSuccess') {
-    endpoint = 'http://localhost:5000/api/registrations';
+    endpoint = `${API_BASE}/api/registrations`;
     successId = 'regSuccess';
     pendingRegistrationData = data; // Save for NDA
   } else if (formType === 'contact' || formType === 'contactSuccess') {
-    endpoint = 'http://localhost:5000/api/contacts';
+    endpoint = `${API_BASE}/api/contacts`;
     successId = 'contactSuccess';
   }
 
@@ -143,7 +146,7 @@ async function handleNDASubmit(e) {
   data.signed_at = new Date().toISOString();
   
   try {
-    const response = await fetch('http://localhost:5000/api/nda-agreements', {
+    const response = await fetch(`${API_BASE}/api/ndaAgreement`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
