@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TK Maile · Mathematics Tutor</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  <script src="index.js" defer></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <div class="logo-mark">
+        <img src="/images/android-chrome-512x512.png" alt="Young Seeds Academy logo">
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">Young Seeds</span>
+        <span class="logo-sub">Academy</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about"        class="nav-link">About</a></li>
+      <li><a href="#blog"         class="nav-link">Lessons</a></li>
+      <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+      <li><a href="#register"     class="nav-link">Register</a></li>
+      <li><a href="#contact"      class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="#register" class="nav-cta">Enrol Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about"        onclick="closeMenu()">About</a></li>
+      <li><a href="#blog"         onclick="closeMenu()">Lessons</a></li>
+      <li><a href="#testimonials" onclick="closeMenu()">Testimonials</a></li>
+      <li><a href="#register"     onclick="closeMenu()">Register</a></li>
+      <li><a href="#contact"      onclick="closeMenu()">Contact</a></li>
+    </ul>
+    <a href="#register" class="mobile-cta" onclick="closeMenu()">Enrol Now &rarr;</a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="math-bg" aria-hidden="true">
+    <span>&#8721;</span><span>&pi;</span><span>&#8747;</span><span>&divide;</span><span>&#8730;</span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">Mathematics Tutoring &middot; Online &amp; Flexible</div>
+    <h1>Learning Maths<br/>with <em>TK Maile</em></h1>
+    <p>Warm, patient, and passionate teaching that helps every student build real
+      confidence in mathematics &mdash; from basics to advanced concepts.</p>
+    <div class="hero-btns">
+      <a href="#register" class="btn-primary">Register for a Class</a>
+      <a href="#about"    class="btn-outline">Learn More</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-number">5+</span>
+        <span class="stat-label">Years Tutoring</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">100+</span>
+        <span class="stat-label">Students Helped</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">Online</span>
+        <span class="stat-label">Classes Available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap">
+      <img src="/images/1774381741.png" alt="TK Maile teaching" class="about-photo">
+      <div class="about-badge">TK Maile<span>Maths Tutor</span></div>
+    </div>
+    <div class="about-text">
+      <p class="section-label">About Me</p>
+      <h2 class="section-title">Making Maths Click for Every Student</h2>
+      <p>Hi &#128075;, I&rsquo;m TK Maile &mdash; a dedicated mathematics educator who believes
+        that every student is capable of understanding and loving mathematics. My
+        approach is warm, patient, and grounded in real understanding rather than
+        just memorising formulas.</p>
+      <p>I teach online classes that are interactive, structured, and tailored to each
+        student&rsquo;s pace. Whether you are struggling with basics or pushing towards
+        advanced topics, there&rsquo;s a place for you in my classroom.</p>
+      <div class="about-values">
+        <span class="value-tag">Patient Teaching</span>
+        <span class="value-tag">Online Classes</span>
+        <span class="value-tag">Step-by-Step Methods</span>
+        <span class="value-tag">All Levels Welcome</span>
+        <span class="value-tag">Small Groups</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="section-label">Learn &amp; Grow</div>
+  <h2 class="section-title">Latest from the Classroom</h2>
+  <p class="section-sub">Bite-sized lessons that make tricky topics click &mdash; written the way your teacher should explain them.</p>
+  <div class="posts-grid">
+    <div class="post-card" onclick="openPost('trig')">
+      <div class="post-thumb t1">sin &theta;</div>
+      <div class="post-body">
+        <div class="post-tag">Trigonometry</div>
+        <h3>How to Master Trigonometry Without the Confusion</h3>
+        <p>A clear, step-by-step breakdown of sine, cosine, and tangent &mdash; and how to apply them to real-world angles every time.</p>
+        <div class="post-meta">By TK Maile &bull; 14 min read</div>
+      </div>
+    </div>
+    <div class="post-card" onclick="openPost('algebra')">
+      <div class="post-thumb t2">x&sup2;</div>
+      <div class="post-body">
+        <div class="post-tag">Algebra</div>
+        <h3>Understanding Quadratic Equations Made Easy</h3>
+        <p>From factoring to the quadratic formula &mdash; learn when to use each method and why it works.</p>
+        <div class="post-meta">By TK Maile &bull; 15 min read</div>
+      </div>
+    </div>
+    <div class="post-card" onclick="openPost('functions')">
+      <div class="post-thumb t3">f(x)</div>
+      <div class="post-body">
+        <div class="post-tag">Functions</div>
+        <h3>Functions in Real Life: Inputs, Outputs &amp; More</h3>
+        <p>Connecting classroom maths to everyday situations &mdash; from vending machines to graphs &mdash; so the concept actually sticks.</p>
+        <div class="post-meta">By TK Maile &bull; 12 min read</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="post-overlay" id="postOverlay">
+  <div class="post-overlay-inner">
+    <button class="post-close" onclick="closePost()">&times; Back to Blog</button>
+    <div class="post-overlay-content" id="postBody"></div>
+  </div>
+</div>
+
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <p class="section-label">What Students Say</p>
+  <h2 class="section-title">Kind Words from the Classroom</h2>
+  <p class="section-sub">Real feedback from students and parents who&rsquo;ve joined my classes</p>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">&ldquo;I used to dread maths. After just a month with TK, I actually look forward to the lessons. He explains everything so clearly and never makes you feel silly for asking questions.&rdquo;</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">L</div>
+        <div><div class="testimonial-name">Lerato M.</div><div class="testimonial-grade">Grade 9 Student</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">&ldquo;TK has been a game-changer for my daughter. She&rsquo;s more confident in her maths than ever before, and I can see the progress in her grades and attitude towards the subject.&rdquo;</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">N</div>
+        <div><div class="testimonial-name">Nomsa D.</div><div class="testimonial-grade">Parent</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">&ldquo;The way TK uses the board during online lessons makes it feel like you&rsquo;re right there in the room. I always leave class feeling confident about the topic.&rdquo;</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">K</div>
+        <div><div class="testimonial-name">Kagiso T.</div><div class="testimonial-grade">Grade 11 Student</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- REGISTER & CONTACT -->
+<section id="register">
+  <p class="section-label">Get In Touch</p>
+  <h2 class="section-title">Register or Send a Message</h2>
+  <p class="section-sub">Fill in the form to reserve your spot in a class, or simply reach out with any questions.</p>
+  <div class="forms-grid">
+
+    <div class="form-wrap">
+      <h3>Class Registration</h3>
+      <p>Reserve your spot in an upcoming mathematics class.</p>
+      <form id="regForm" onsubmit="handleSubmit(event, 'registration')">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" placeholder="e.g. Thabo" required/>
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name" placeholder="e.g. Dlamini" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="reg_email">Email Address</label>
+          <input type="email" id="reg_email" name="email" placeholder="your@email.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+27 00 000 0000"/>
+        </div>
+        <div class="form-group">
+          <label for="grade">Grade / Level</label>
+          <select id="grade" name="grade" required>
+            <option value="" disabled selected>Select your grade</option>
+            <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+            <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+            <option>University / Adult</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="preferredTime">Preferred Class Time</label>
+          <select id="preferredTime" name="preferredTime">
+            <option value="" disabled selected>Select a time slot</option>
+            <option>Weekday Mornings (8am &ndash; 12pm)</option>
+            <option>Weekday Afternoons (2pm &ndash; 5pm)</option>
+            <option>Weekday Evenings (6pm &ndash; 8pm)</option>
+            <option>Saturday Mornings</option>
+            <option>Flexible / Any time</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">Register Now</button>
+        <div class="success-msg" id="regSuccess">&#127881; You&rsquo;re registered! TK will be in touch shortly.</div>
+      </form>
+    </div>
+
+    <div class="form-wrap" id="contact">
+      <h3>Send a Message</h3>
+      <p>Have a question? Reach out and I&rsquo;ll get back to you as soon as possible.</p>
+      <form id="contactForm" onsubmit="handleSubmit(event, 'contact')">
+        <div class="form-group">
+          <label for="contact_name">Your Name</label>
+          <input type="text" id="contact_name" name="name" placeholder="Full name" required/>
+        </div>
+        <div class="form-group">
+          <label for="contact_email">Email Address</label>
+          <input type="email" id="contact_email" name="email" placeholder="your@email.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option>Class enquiry</option>
+            <option>Pricing &amp; rates</option>
+            <option>Curriculum questions</option>
+            <option>Technical / platform help</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+        <div class="success-msg" id="contactSuccess">&#9989; Message sent! I&rsquo;ll reply within 24 hours.</div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-mark">
+          <img src="/images/android-chrome-512x512.png" alt="Young Seeds Academy">
+        </div>
+        <div class="footer-logo-words">
+          <span class="footer-logo-name">Young Seeds <em>Academy</em></span>
+          <span class="footer-logo-tagline">Mathematics Tutoring</span>
+        </div>
+      </div>
+      <p class="footer-about">
+        Helping students across South Africa build real confidence and deep understanding
+        in mathematics &mdash; one lesson at a time.
+      </p>
+      <div class="footer-social">
+        <a href="+27746226219" aria-label="WhatsApp" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-heading">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#about">About TK</a></li>
+        <li><a href="#blog">Free Lessons</a></li>
+        <li><a href="#testimonials">Student Reviews</a></li>
+        <li><a href="#register">Register</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-heading">Subjects Covered</h4>
+      <ul class="footer-links">
+        <li><a href="#blog">Trigonometry</a></li>
+        <li><a href="#blog">Algebra &amp; Quadratics</a></li>
+        <li><a href="#blog">Functions &amp; Graphs</a></li>
+        <li><a href="#blog">Geometry &amp; Mensuration</a></li>
+        <li><a href="#blog">Statistics &amp; Probability</a></li>
+        <li><a href="#blog">Calculus (Gr 12)</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 class="footer-heading">Get in Touch</h4>
+      <ul class="footer-contact">
+        <li><span class="fc-icon">&#128205;</span><span>Germiston, Gauteng<br>South Africa</span></li>
+        <li><span class="fc-icon">&#127760;</span><span>Online classes available<br>nationwide</span></li>
+        <li><span class="fc-icon">&#128336;</span><span>Mon &ndash; Sat<br>10:00 AM &ndash; 10:00 PM</span></li>
+        <li><span class="fc-icon">&#128172;</span><span>WhatsApp enquiries<br>+27 74 622 6219<br>welcome</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Tirelo Kgotatso Maile &middot; All rights reserved</p>
+    <p class="footer-tagline">Made with &hearts; for every student who said <em>&ldquo;I can&rsquo;t do maths&rdquo;</em></p>
+  </div>
+</footer>
+
+
+<!-- NDA MODAL -->
+<div id="ndaModal" class="nda-modal">
+  <div class="nda-modal-content">
+    <div class="nda-header">
+      <button class="nda-close" onclick="closeNDAModal()">&times;</button>
+      <h3>&#128203; Service Agreement</h3>
+      <p>Young Seeds Academy &mdash; Mathematics Tutoring Services</p>
+    </div>
+    <div class="nda-body">
+      <form id="ndaForm" onsubmit="handleNDASubmit(event)">
+        <div class="nda-section">
+          <h4>Student &amp; Parent Information</h4>
+          <div class="form-group">
+            <label for="parentname">Parent/Guardian Full Name *</label>
+            <input type="text" id="parentname" name="parentname" required>
+          </div>
+          <div class="form-group">
+            <label for="learnername">Learner Full Name *</label>
+            <input type="text" id="learnername" name="learnername" required>
+          </div>
+          <div class="form-group">
+            <label for="ndaGrade">Grade Level *</label>
+            <select id="ndaGrade" name="ndaGrade" required>
+              <option value="">Select grade</option>
+              <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+              <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+            </select>
+          </div>
+        </div>
+        <div class="nda-section">
+          <h4>&#128176; Fee Structure</h4>
+          <div class="fee-box">
+            <div class="fee-item"><span class="fee-label">Registration Fee (one-time)</span><span class="fee-amount">R150</span></div>
+            <div class="fee-item"><span class="fee-label">Monthly Tuition</span><span class="fee-amount">R250/month</span></div>
+            <div class="fee-item"><span class="fee-label">Single Session Rate</span><span class="fee-amount">R120/session</span></div>
+            <div class="fee-item"><span class="fee-label">Payment Due Date</span><span class="fee-amount">By 5th of each month</span></div>
+          </div>
+        </div>
+        <div class="nda-section">
+          <h4>Terms &amp; Conditions</h4>
+          <div class="agreement-text">
+            <p>By signing below, I acknowledge and agree that:</p>
+            <ul>
+              <li>I understand the fee structure and payment terms outlined above</li>
+              <li>Lessons are non-refundable but can be rescheduled with <strong>24 hours notice</strong></li>
+              <li>STUDENT PROGRESS DEPENDS ON REGULAR ATTENDANCE AND PRACTICE</li>
+              <li>All student information is kept confidential and protected</li>
+              <li>Monthly fees are due regardless of student absence (except illness with notice)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="nda-section">
+          <h4>Digital Signature</h4>
+          <div class="signature-box">
+            <label for="signature">Type your full name as signature *</label><br>
+            <input type="text" id="signature" name="signature" placeholder="Type your full name here" required pattern=".{3,}" title="Please type your full name (at least 3 characters)">
+          </div>
+          <div class="form-group">
+            <label for="agreementDate">Date *</label>
+            <input type="date" id="agreementDate" name="agreementDate" required>
+          </div>
+          <label class="checkbox-group">
+            <input type="checkbox" name="agree" required>
+            <span>I have read, understood, and agree to all terms and conditions above *</span>
+          </label>
+          <button type="submit" class="nda-submit">&#10003; Sign &amp; Confirm Registration</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> 
+</body>
+</html>
