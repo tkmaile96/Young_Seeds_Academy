@@ -51,8 +51,14 @@
 // Store registration data temporarily for NDA flow
 let pendingRegistrationData = null;
 
-// Production API base (Render)
-const API_BASE = 'https://young-seeds-academy.onrender.com';
+// API base
+// - When hosting the site publicly, use Render
+// - When running locally, allow localhost override
+const API_BASE =
+  window.API_BASE ||
+  (location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+    ? 'http://localhost:5000'
+    : 'https://young-seeds-academy.onrender.com');
 
 async function handleSubmit(e, formType) {
   e.preventDefault();
@@ -70,6 +76,9 @@ async function handleSubmit(e, formType) {
   } else if (formType === 'contact' || formType === 'contactSuccess') {
     endpoint = `${API_BASE}/api/contacts`;
     successId = 'contactSuccess';
+  } else {
+    alert('Unknown form type. Please refresh and try again.');
+    return;
   }
 
   try {
@@ -115,12 +124,13 @@ function showNDAModal() {
       const lname = pendingRegistrationData.last_name || '';
       const grade = pendingRegistrationData.grade || '';
       
-      const learnerInput = document.querySelector('[name="learner_name"]');
-      const gradeInput = document.querySelector('[name="grade"]');
+      const learnerInput = document.querySelector('[name="learnername"]');
+      const gradeInput = document.querySelector('[name="ndaGrade"]');
       
       if (learnerInput && (fname || lname)) {
         learnerInput.value = `${fname} ${lname}`.trim();
       }
+      // Registration uses values like "Grade 9" which match the NDA dropdown options.
       if (gradeInput && grade) {
         gradeInput.value = grade;
       }
