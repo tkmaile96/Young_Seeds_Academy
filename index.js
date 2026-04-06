@@ -113,36 +113,6 @@ async function handleSubmit(e, formType) {
   }
 }
 
-// NDA Modal Functions
-function showNDAModal() {
-  const modal = document.getElementById('ndaModal');
-  if (modal) {
-    modal.style.display = 'flex';
-    // Pre-fill if we have registration data
-    if (pendingRegistrationData) {
-      const fname = pendingRegistrationData.first_name || '';
-      const lname = pendingRegistrationData.last_name || '';
-      const grade = pendingRegistrationData.grade || '';
-      
-      const learnerInput = document.querySelector('[name="learnername"]');
-      const gradeInput = document.querySelector('[name="ndaGrade"]');
-      
-      if (learnerInput && (fname || lname)) {
-        learnerInput.value = `${fname} ${lname}`.trim();
-      }
-      // Registration uses values like "Grade 9" which match the NDA dropdown options.
-      if (gradeInput && grade) {
-        gradeInput.value = grade;
-      }
-    }
-  }
-}
-
-function closeNDAModal() {
-  const modal = document.getElementById('ndaModal');
-  if (modal) modal.style.display = 'none';
-}
-
 async function handleNDASubmit(e) {
   e.preventDefault();
   const form = e.target;
